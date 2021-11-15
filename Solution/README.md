@@ -29,10 +29,10 @@ Please update the `PurchaseOrder` class found in this java package to turn it in
 * getters for all instance variables
   * **NOTE:** some of these instance variables are mutable. For these variables, use defensive copying in the getters.
 * `BigDecimal determineBillableCost(Double taxRate)`: returns `(1 + taxRate) * subtotal`
-    
-    
+
 All tests in run by the `immutabilityandfinal-prework-purchaseordertest` workflow should pass when `PurchaseOrder`
 is immutable. There is no 'main' method to run.
+
 
 HINTS:
 * [The tests involving the getters are failing and I don't know why!](./hints/hint-00.md)
