@@ -1,5 +1,3 @@
-package com.amazon.ata.immutabilityandfinal.prework;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

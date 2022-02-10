@@ -1,5 +1,3 @@
-package com.amazon.ata.immutabilityandfinal.prework;
-
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;

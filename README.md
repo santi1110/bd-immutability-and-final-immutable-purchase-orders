@@ -1,10 +1,5 @@
 ### Immutable Purchase Orders
 
-**Branch name:** immutabilityandfinal-prework
-
-**RDE workfows:**
-* `rde wflow run immutabilityandfinal-prework-purchaseordertest`
-
 Expected time required: 15 min
 
 The premise of this activity is that the purchase order is generated at a particular time, and is not changeable
@@ -31,8 +26,7 @@ Please update the `PurchaseOrder` class found in this java package to turn it in
 * `BigDecimal determineBillableCost(Double taxRate)`: returns `(1 + taxRate) * subtotal`
     
     
-All tests in run by the `immutabilityandfinal-prework-purchaseordertest` workflow should pass when `PurchaseOrder`
-is immutable. There is no 'main' method to run.
+All tests should pass when `PurchaseOrder` is immutable. There is no 'main' method to run.
 
 HINTS:
 * [The tests involving the getters are failing and I don't know why!](./hints/hint-00.md)
