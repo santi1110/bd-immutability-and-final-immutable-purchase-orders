@@ -1,12 +1,19 @@
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
  * A PurchaseOrder tracks a sales contract between Amazon and a vendor
  */
-public class PurchaseOrder {
+public final class PurchaseOrder {
+
+    private final ZonedDateTime orderDate;
+    private final BigDecimal subtotal;
+    private final String vendor;
+    private final List<String> items;
 
     /**
      * Constructor.
@@ -16,7 +23,10 @@ public class PurchaseOrder {
      * @param items - List of items purchased.
      */
     public PurchaseOrder(ZonedDateTime orderDate, BigDecimal subtotal, String vendor, List<String> items) {
-
+        this.subtotal = subtotal;
+        this.vendor = vendor;
+        this.items = new ArrayList<>(items);
+        this.orderDate = ZonedDateTime.from(orderDate);
     }
 
     /**
@@ -25,7 +35,7 @@ public class PurchaseOrder {
      * @return Cost including tax rate.
      */
     public BigDecimal determineBillableCost(Double taxRate) {
-        return new BigDecimal("0.0");
+        return subtotal.multiply(BigDecimal.valueOf(1 + taxRate));
     }
 
     /**
@@ -33,7 +43,7 @@ public class PurchaseOrder {
      * @return subtotal
      */
     public BigDecimal getSubtotal() {
-        return new BigDecimal("0.0");
+        return subtotal;
     }
 
     /**
@@ -41,7 +51,8 @@ public class PurchaseOrder {
      * @return vendor
      */
     public String getVendor() {
-        return "";
+
+        return vendor;
     }
 
     /**
@@ -49,7 +60,7 @@ public class PurchaseOrder {
      * @return item list
      */
     public List<String> getItems() {
-        return new ArrayList<String>();
+        return new ArrayList<>(items);
     }
 
     /**
@@ -57,6 +68,6 @@ public class PurchaseOrder {
      * @return Order Date
      */
     public ZonedDateTime getOrderDate() {
-        return ZonedDateTime.now();
+        return ZonedDateTime.from(orderDate);
     }
 }
